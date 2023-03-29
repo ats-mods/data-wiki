@@ -50,8 +50,8 @@
                     <a href="/data-wiki/console-commands">Commands</a>
                 </nav>
                  <nav>
-                    <span>Wiki Updated: 16/Nov/22</span>
-                    <span>Game Version: Early Access v0.37.3</span>
+                    <span>Wiki Updated: 28/Mar/23</span>
+                    <span>Game Version: Early Access 0.46.1</span>
                     <span>Scale costs for difficulty:</span>
                     <select id="difficulty-select">
                         <option value="0_Normal">Settler</option>
@@ -85,14 +85,20 @@
 <table class="console-commands-table">
 <tr><th>Command</th><th>Arguments</th><th>Method called</th></tr>
 <tr>
+<td>altar.add</td>
+<td>name :string</td>
+<td>AltarRuntimeTools.AddAltarEffect</td>
+</tr>
+
+<tr>
 <td>ambient.next</td>
 <td></td>
 <td>SounndRuntimeTools.PlayNextAmbient</td>
 </tr>
 
 <tr>
-<td>blight.add</td>
-<td>amount :float</td>
+<td>blight.addCysts</td>
+<td>amount :int</td>
 <td>BlightRuntimeTools.AddBlight</td>
 </tr>
 
@@ -139,6 +145,12 @@
 </tr>
 
 <tr>
+<td>customGame.show</td>
+<td></td>
+<td>CustomGameRuntimeTools.ShowPopup</td>
+</tr>
+
+<tr>
 <td>debug</td>
 <td></td>
 <td>DebugModesRuntimeTools.DebugeMode</td>
@@ -151,6 +163,12 @@
 </tr>
 
 <tr>
+<td>debug.cornerstones</td>
+<td>value :bool</td>
+<td>DebugModesRuntimeTools.Cornerstones</td>
+</tr>
+
+<tr>
 <td>debug.daily</td>
 <td>value :bool</td>
 <td>DebugModesRuntimeTools.Daily</td>
@@ -160,6 +178,12 @@
 <td>debug.goals</td>
 <td>value :bool</td>
 <td>DebugModesRuntimeTools.Goals</td>
+</tr>
+
+<tr>
+<td>debug.IOException</td>
+<td>value :bool</td>
+<td>DebugModesRuntimeTools.IOException</td>
 </tr>
 
 <tr>
@@ -187,6 +211,12 @@
 </tr>
 
 <tr>
+<td>debug.TwitchChatProblems</td>
+<td>value :bool</td>
+<td>DebugModesRuntimeTools.TwitchChatProblems</td>
+</tr>
+
+<tr>
 <td>debug.worldMap</td>
 <td>value :bool</td>
 <td>DebugModesRuntimeTools.WorldMap</td>
@@ -195,7 +225,7 @@
 <tr>
 <td>effect.add</td>
 <td>name :string</td>
-<td>EffectsRuntimeTools.AddReward</td>
+<td>EffectsRuntimeTools.AddEffect</td>
 </tr>
 
 <tr>
@@ -253,6 +283,12 @@
 </tr>
 
 <tr>
+<td>goals.unlockAll</td>
+<td></td>
+<td>GoalsRuntimeTools.UnlockAll</td>
+</tr>
+
+<tr>
 <td>good</td>
 <td>goodName :string</td>
 <td>GoodsRuntimeTools.GetGoodAmount</td>
@@ -292,6 +328,12 @@
 <td>good.removeAll</td>
 <td></td>
 <td>GoodsRuntimeTools.RemoveAllGoods</td>
+</tr>
+
+<tr>
+<td>help.all</td>
+<td></td>
+<td>MetaRuntimeTools.PrintAllConsoleCommands</td>
 </tr>
 
 <tr>
@@ -361,21 +403,15 @@
 </tr>
 
 <tr>
-<td>order.add</td>
-<td>name :string</td>
-<td>OrdersRuntimeTools.AddOrder</td>
+<td>newcomers.arrive</td>
+<td></td>
+<td>NewcomersRuntimeTools.ForceTraderArrival</td>
 </tr>
 
 <tr>
 <td>order.list</td>
 <td></td>
 <td>OrdersRuntimeTools.ListOrders</td>
-</tr>
-
-<tr>
-<td>order.remove</td>
-<td>name :string</td>
-<td>OrdersRuntimeTools.RemoveOrder</td>
 </tr>
 
 <tr>
@@ -517,6 +553,12 @@
 </tr>
 
 <tr>
+<td>reputation.addAsResolve</td>
+<td>amount :float</td>
+<td>ReputationRuntimeTools.AddResolveReputation</td>
+</tr>
+
+<tr>
 <td>reputationPenalty.add</td>
 <td>amount :float</td>
 <td>ReputationRuntimeTools.AddReputationPenalty</td>
@@ -583,6 +625,12 @@
 </tr>
 
 <tr>
+<td>save.gameCode</td>
+<td></td>
+<td>SavesRuntimeTools.GetGameSupportCode</td>
+</tr>
+
+<tr>
 <td>season</td>
 <td></td>
 <td>TimeRuntimeTools.GetSeason</td>
@@ -621,7 +669,7 @@
 <tr>
 <td>settings.aa</td>
 <td>value :int</td>
-<td>SettingsRuntimeTools.AntyAliasing</td>
+<td>SettingsRuntimeTools.Antyaliasing</td>
 </tr>
 
 <tr>
@@ -640,12 +688,6 @@
 <td>settings.shadows_alt</td>
 <td>value :bool</td>
 <td>SettingsRuntimeTools.ShadowsAlt</td>
-</tr>
-
-<tr>
-<td>settings.trees.shadowsCast</td>
-<td>value :bool</td>
-<td>SettingsRuntimeTools.OptimalTreesCast</td>
 </tr>
 
 <tr>
@@ -712,6 +754,24 @@
 <td>trader.list</td>
 <td></td>
 <td>TraderRuntimeTools.ListTraders</td>
+</tr>
+
+<tr>
+<td>twitch.chat</td>
+<td>user :string, msg :string</td>
+<td>TwitchRuntimeTools.WriteToChat</td>
+</tr>
+
+<tr>
+<td>twitch.createPoll</td>
+<td>title :string, o1 :string, o2 :string, o3 :string, secDuration :int</td>
+<td>TwitchRuntimeTools.CreatePoll</td>
+</tr>
+
+<tr>
+<td>twitch.getPollStatus</td>
+<td>id :string</td>
+<td>TwitchRuntimeTools.GetPollStatus</td>
 </tr>
 
 <tr>
