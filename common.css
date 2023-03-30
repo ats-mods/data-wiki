@@ -267,9 +267,15 @@ footer {
 
 
 .relic-effect-category {
-    margin-top: 10px;;
-    margin-bottom: 10px;;
+    margin-top: 10px;
+    margin-bottom: 10px;
     color: lightskyblue;
+}
+
+.relic-effect-tag {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(201, 201, 201);
 }
 
 .relic-effect {
