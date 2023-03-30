@@ -265,6 +265,9 @@ footer {
     min-width: 200px;
 }
 
+.to-solve-set {
+    min-width: 180px;
+}
 
 .relic-effect-category {
     margin-top: 10px;
