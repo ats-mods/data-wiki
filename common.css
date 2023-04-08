@@ -310,3 +310,7 @@ footer {
 .pad-left {
     padding-left: 6px;
 }
+
+.flavor-text {
+    font-style: italic;
+}
